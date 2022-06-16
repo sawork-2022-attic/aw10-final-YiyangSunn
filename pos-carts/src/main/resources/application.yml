@@ -1,0 +1,47 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: pos-carts
+  cache:
+    ehcache:
+      config: classpath:ehcache/conf.xml
+
+eureka:
+  instance:
+    instance-id: pos-carts9001
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      # 可用的配置参数参考 -- https://resilience4j.readme.io/docs/circuitbreaker
+      cart-controller:
+        #        通过 actuator 的监控端点（endpoint）显示健康状态
+        registerHealthIndicator: true
+        #        基于请求数计算（还有一个基于时间窗计算）
+        slidingWindowType: COUNT_BASED
+        #        滑动窗大小为 10 个请求
+        slidingWindowSize: 10
+        #        一个滑动窗内至少收到 5 个请求才打开断路器
+        #        满足以下两个条件断路器就会打开（不一定收集满整个窗口）：
+        #          1) 收到的请求数超过 minimumNumberOfCalls
+        #          2) 收到的请求中失败率或超时率达到阈值
+        minimumNumberOfCalls: 5
+        #       一个滑动窗内有超过 50% 的请求失败就打开断路器
+        failureRateThreshold: 50
+        #        超过 1s 就认为是慢请求
+        slowCallDurationThreshold: 1000ms
+        #        一个滑动窗内慢请求超过 50% 就打开断路器
+        slowCallRateThreshold: 50
+        #        经过 10 s 从开转到半开
+        waitDurationInOpenState: 10s
+        #        半开状态允许采样 10 个请求，如果失败率仍然高于阈值，则保持断路器打开
+        permittedNumberOfCallsInHalfOpenState: 10
+        #        自动转到半开需要线程来监控，默认是 false
+        automaticTransitionFromOpenToHalfOpenEnabled: true

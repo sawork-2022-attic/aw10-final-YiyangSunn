@@ -1,0 +1,35 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: pos-products
+  cache:
+    type: ehcache
+    ehcache:
+      config: classpath:ehcache/conf.xml
+
+eureka:
+  instance:
+    instance-id: pos-products8001
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      # 可用的配置参数参考 -- https://resilience4j.readme.io/docs/circuitbreaker
+      product-controller:
+        registerHealthIndicator: true
+        slidingWindowType: COUNT_BASED
+        slidingWindowSize: 10
+        minimumNumberOfCalls: 5
+        failureRateThreshold: 50
+        slowCallDurationThreshold: 1000ms
+        slowCallRateThreshold: 50
+        waitDurationInOpenState: 10s
+        permittedNumberOfCallsInHalfOpenState: 10
+        automaticTransitionFromOpenToHalfOpenEnabled: true

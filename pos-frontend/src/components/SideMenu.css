@@ -1,0 +1,8 @@
+.side-menu {
+    height: auto;
+    width: 100%;
+}
+
+.side-menu .side-menu-item-label {
+    font-size: 16px;
+}

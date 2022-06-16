@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--抄的旧版本配置，新版本 ehcache 3.x 的配置不太好写-->
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
+         updateCheck="false">
+
+    <!--    没有超时，没有溢出到磁盘，也没有持久化-->
+
+    <cache name="items"
+           maxElementsInMemory="128"
+           memoryStoreEvictionPolicy="LRU"
+           overflowToDisk="false"
+           overflowToOffHeap="false">
+        <persistence strategy="none"/>
+    </cache>
+
+    <cache name="getItem"
+           maxElementsInMemory="1024"
+           memoryStoreEvictionPolicy="LRU"
+           overflowToOffHeap="false"
+           overflowToDisk="false">
+        <persistence strategy="none"/>
+    </cache>
+
+</ehcache>

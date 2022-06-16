@@ -1,0 +1,16 @@
+.content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    overflow-x: clip;
+    padding-top: 5px;
+}
+
+.content .content-left {
+    width: 20%;
+}
+
+.content .content-right {
+    width: 80%;
+}

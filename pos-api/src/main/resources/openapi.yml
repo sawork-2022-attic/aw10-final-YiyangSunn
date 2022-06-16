@@ -1,0 +1,392 @@
+openapi: 3.0.0
+
+info:
+  title: MicroPoS API Specification
+  version: 1.0.0
+  license:
+    name: MIT
+
+paths:
+  /carts:
+    get:
+      summary: List all items in the cart
+      operationId: getItems
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Items"
+    delete:
+      summary: Empty the cart
+      operationId: emptyItems
+      responses:
+        200:
+          description: OK
+  /carts/{productId}:
+    get:
+      summary: Get information about a specified item by the product's ID
+      operationId: getItemById
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          description: The id of the product
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Item"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    delete:
+      summary: Delete the specified item
+      operationId: removeItemById
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          description: The id of the product
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+        400:
+          description: Bad Request, typically no such item
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    post:
+      summary: change the quantity of the specified item
+      operationId: updateItemById
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          description: The id of the product
+          schema:
+            type: string
+        - name: quantity
+          in: query
+          required: true
+          description: The amount of change in the quantity of the product (could be negative)
+          schema:
+            type: integer
+      responses:
+        200:
+          description: OK
+        400:
+          description: Bad Request, typically no such item
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+  /carts/checkout:
+    post:
+      summary: Check out all items in the cart
+      operationId: checkoutAll
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+
+  /counter/checkout:
+    post:
+      summary: Compute the total price of a item list
+      operationId: checkout
+      requestBody:
+        description: The item list
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Items"
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: number
+                format: double
+
+  /products/{productId}:
+    get:
+      summary: Get product by its ID
+      operationId: getProductById
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          description: The id of the product to retrieve
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Product"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+  /products/pager:
+    get:
+      summary: Get a page of products
+      operationId: getProductsInPage
+      parameters:
+        - name: page
+          in: query
+          required: true
+          description: page number, start from 1
+          schema:
+            type: integer
+        - name: pageSize
+          in: query
+          required: true
+          description: number of products per page
+          schema:
+            type: integer
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PageResult"
+
+  /orders:
+    get:
+      summary: Get the outline of all orders
+      operationId: getOrders
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OrderOutlines"
+    post:
+      summary: Create a new order
+      operationId: createOrder
+      requestBody:
+        description: The data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Payment"
+      responses:
+        200:
+          description: OK, return the order ID
+          content:
+            application/json:
+              schema:
+                type: string
+
+  /orders/{orderId}:
+    get:
+      summary: Get the detail of the specified order
+      operationId: getOrderById
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          description: The id of the order to retrieve
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Order"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+  /delivery/{deliveryId}:
+    get:
+      summary: Get the delivery information by its ID
+      operationId: getDeliveryById
+      parameters:
+        - name: deliveryId
+          in: path
+          required: true
+          description: Id of the delivery
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Delivery"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+
+components:
+  schemas:
+    Item:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        price:
+          type: number
+          format: double
+        image:
+          type: string
+        quantity:
+          type: integer
+    Items:
+      type: array
+      items:
+        $ref: "#/components/schemas/Item"
+    Product:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        price:
+          type: number
+          format: double
+        image:
+          type: string
+    Products:
+      type: array
+      items:
+        $ref: "#/components/schemas/Product"
+    PageResult:
+      type: object
+      properties:
+        total:
+          type: integer
+        products:
+          type: array
+          items:
+            $ref: "#/components/schemas/Product"
+    Payment:
+      type: object
+      properties:
+        total:
+          type: number
+          format: double
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/Item"
+    Order:
+      type: object
+      properties:
+        orderId:
+          type: string
+        deliveryId:
+          type: string
+        createdTime:
+          type: integer
+          format: int64
+        payedTime:
+          type: integer
+          format: int64
+        total:
+          type: number
+          format: double
+        orderStatus:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/Item"
+    OrderOutline:
+      type: object
+      properties:
+        orderId:
+          type: string
+        deliveryId:
+          type: string
+        createdTime:
+          type: integer
+          format: int64
+        orderStatus:
+          type: string
+        total:
+          type: number
+          format: double
+    OrderOutlines:
+      type: array
+      items:
+        $ref: "#/components/schemas/OrderOutline"
+    Delivery:
+      type: object
+      properties:
+        deliveryId:
+          type: string
+        orderId:
+          type: string
+        carrier:
+          type: string
+        phases:
+          type: array
+          items:
+            $ref: "#/components/schemas/DeliveryPhase"
+    DeliveryPhase:
+      type: object
+      properties:
+        phaseId:
+          type: string
+        timeStamp:
+          type: integer
+          format: int64
+        message:
+          type: string
+    DeliveryInfo:
+      type: object
+      properties:
+        orderId:
+          type: string
+        deliveryId:
+          type: string
+        carrier:
+          type: string
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string

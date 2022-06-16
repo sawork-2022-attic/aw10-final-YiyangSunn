@@ -1,0 +1,27 @@
+server:
+  port: 11001
+
+spring:
+  application:
+    name: pos-orders
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: root
+    password: Saw0rk_2o22
+  cloud:
+    stream:
+      function:
+        autodetect: false
+      bindings:
+        order-out-0:
+          binder: rabbit
+          destination: orderExchange
+          group: default
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka

@@ -1,0 +1,20 @@
+server:
+  port: 12001
+
+spring:
+  application:
+    name: pos-delivery
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: root
+    password: Saw0rk_2o22
+  cloud:
+    function:
+      definition: order
+    stream:
+      bindings:
+        order-in-0:
+          binder: rabbit
+          destination: orderExchange
+          group: default

@@ -1,0 +1,64 @@
+.order-list .order-list-title {
+    margin-left: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.order-list .ant-pagination {
+    padding-right: 20px;
+}
+
+.order-detail {
+    height: auto;
+}
+
+.order-detail-item {
+    height: auto;
+    width: auto;
+}
+
+.order-detail-item .item-image-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.order-detail-item .item-image {
+    height: 80px;
+    max-width: 80px;
+}
+
+.order-detail-item .item-name {
+    margin-left: 20px;
+    width: 100%;
+    height: 70px;
+    max-height: 70px;
+    overflow: hidden;
+}
+
+.order-detail-item .item-price-quantity {
+    text-align: right;
+}
+
+.order-detail-item .item-price {
+    margin-right: 20px;
+}
+
+.delivery-detail {
+    height: auto;
+}
+
+.delivery-detail-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.delivery-timeline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delivery-header-info {
+    font-size: 14px;
+}
