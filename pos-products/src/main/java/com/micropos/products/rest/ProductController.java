@@ -39,8 +39,9 @@ public class ProductController implements ProductsApi {
 
     @Override
     @CircuitBreaker(name = "product-controller", fallbackMethod = "getProductsInPageFallback")
-    public Mono<ResponseEntity<PageResultDto>> getProductsInPage(Integer page, Integer pageSize, ServerWebExchange exchange) {
-        return productService.productsInPage(page, pageSize)
+    public Mono<ResponseEntity<PageResultDto>> getProductsInPage(
+            Integer page, Integer pageSize, String keyword, String category, ServerWebExchange exchange) {
+        return productService.productsInPage(page, pageSize, keyword, category)
                 .flatMap(pageResult -> {
                     List<ProductDto> productDtos = new ArrayList<>(productMapper.toProductsDto(pageResult.getProducts()));
                     return Mono.just(ResponseEntity.ok(new PageResultDto().total(pageResult.getTotal()).products(productDtos)));

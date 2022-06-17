@@ -1,7 +1,7 @@
 import React, {useContext} from "react"
 import {Button, List, message} from "antd"
 import "./Cart.css"
-import {CartContext} from "../App"
+import {GlobalContext} from "../App"
 import {useRequest} from "ahooks"
 
 export default function Cart() {
@@ -14,7 +14,7 @@ export default function Cart() {
     requestRemoveItem,
     requestEmptyItems,
     requestCheckout
-  } = useContext(CartContext)
+  } = useContext(GlobalContext)
 
   // 从后端读取购物车数据
   const {error, loading} = useRequest(requestGetItems)

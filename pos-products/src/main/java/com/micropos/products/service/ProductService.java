@@ -10,8 +10,6 @@ public interface ProductService {
 
     Mono<Optional<Product>> getProduct(String id);
 
-    Mono<Integer> getProductsCount();
-
-    Mono<PageResult> productsInPage(int page, int pageSize);
+    Mono<PageResult> productsInPage(int page, int pageSize, String keyword, String category);
 
 }

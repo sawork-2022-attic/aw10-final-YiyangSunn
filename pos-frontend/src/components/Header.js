@@ -2,12 +2,15 @@ import React, {useContext} from "react"
 import {Badge, Button, Dropdown, Input} from "antd"
 import {AudioOutlined, CameraOutlined, ShoppingCartOutlined, WindowsOutlined} from "@ant-design/icons"
 import "./Header.css"
-import {CartContext} from "../App"
+import {GlobalContext} from "../App"
 import Cart from "./Cart"
+import {useLocation} from "react-router-dom"
 
 export default function Header() {
 
-  const {itemList} = useContext(CartContext)
+  const location = useLocation()
+
+  const {itemList, filters, setFilters, keyword, setKeyword} = useContext(GlobalContext)
 
   return (
     <div className="header">
@@ -16,18 +19,28 @@ export default function Header() {
           <WindowsOutlined/>
         </span>
         <span className="brand-name">
-          MicroPOS
+          MicroPoS
         </span>
       </div>
 
       {/*顶部搜索框*/}
       <Input.Search
+        value={keyword}
+        onChange={e => setKeyword(e.target.value)}
         className="search"
-        placeholder="Not Implemented"
+        placeholder="请输入商品名称"
         size="large"
         prefix={<AudioOutlined style={{marginRight: "15px"}}/>}
         suffix={<CameraOutlined style={{marginLeft: "15px"}}/>}
         enterButton="搜索"
+        disabled={location.pathname === "/orders"}
+        onSearch={(keyword) => {
+          if (keyword.trim() !== ""){
+            setFilters({...filters, keyword})
+          } else {
+            setFilters({...filters, keyword: null})
+          }
+        }}
       />
 
       {/*购物车下拉菜单按钮*/}

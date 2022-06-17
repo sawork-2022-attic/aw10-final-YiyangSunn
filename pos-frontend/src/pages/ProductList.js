@@ -1,21 +1,13 @@
 import React from "react"
-import {useContext, useRef, useState} from "react"
-import {CartContext} from "../App"
+import {useContext, useRef} from "react"
+import {GlobalContext} from "../App"
 import {useRequest} from "ahooks"
 import {Button, List, message, Pagination} from "antd"
 import "./ProductList.css"
 
-export default function ProductList(props) {
-  // 查询结果的过滤条件
-  const [filters, setFilters] = useState({
-    page: 1,
-    pageSize: 8,
-    category: "all",
-    keyword: ""
-  })
-
+export default function ProductList() {
   // 从上下文中取操作
-  const {requestAddItem} = useContext(CartContext);
+  const {filters, setFilters, requestAddItem} = useContext(GlobalContext)
 
   // 记录对象引用
   const listRef = useRef(null)
@@ -29,9 +21,17 @@ export default function ProductList(props) {
   const loadProducts = async (filters) => {
     // 取查询条件
     const {page, pageSize, category, keyword} = filters
+    // 拼接查询字符串
+    let query = `page=${page}&pageSize=${pageSize}`
+    if (keyword !== null) {
+      query += `&keyword=${keyword}`
+    }
+    if (category !== null) {
+      query += `&category=${category}`
+    }
     // 取数据
     return fetch(
-      `http://localhost:8080/api/products/pager?page=${page}&pageSize=${pageSize}&category=${category}&keyword=${keyword}`,
+      `http://localhost:8080/api/products/pager?${query}`,
       {
         method: "GET"
       }

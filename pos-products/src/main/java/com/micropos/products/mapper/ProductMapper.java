@@ -12,8 +12,6 @@ public interface ProductMapper {
 
     Collection<ProductDto> toProductsDto(Collection<Product> products);
 
-    Product toProduct(ProductDto productDto);
-
     ProductDto toProductDto(Product pet);
 
 }

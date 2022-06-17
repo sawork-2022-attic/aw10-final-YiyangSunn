@@ -14,7 +14,7 @@
         <persistence strategy="none"/>
     </cache>
 
-<!--    存储商品的分页查询结果-->
+    <!--    存储商品的分页查询结果-->
     <cache name="productsInPage"
            maxElementsInMemory="1024"
            memoryStoreEvictionPolicy="LRU"
@@ -22,9 +22,9 @@
         <persistence strategy="none"/>
     </cache>
 
-<!--    存储商品总数-->
+    <!--    存储商品总数-->
     <cache name="productsCount"
-           maxElementsInMemory="4"
+           maxElementsInMemory="1024"
            memoryStoreEvictionPolicy="LRU"
            overflowToDisk="false">
         <persistence strategy="none"/>

@@ -18,4 +18,5 @@ public class Delivery {
     private String carrier;
 
     private List<DeliveryPhase> phases;
+
 }

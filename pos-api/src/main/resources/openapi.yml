@@ -167,6 +167,18 @@ paths:
           description: number of products per page
           schema:
             type: integer
+        - name: keyword
+          in: query
+          required: false
+          description: keyword of the product name
+          schema:
+            type: string
+        - name: category
+          in: query
+          required: false
+          description: category of the product
+          schema:
+            type: string
       responses:
         200:
           description: OK
@@ -284,6 +296,8 @@ components:
         price:
           type: number
           format: double
+        category:
+          type: string
         image:
           type: string
     Products:

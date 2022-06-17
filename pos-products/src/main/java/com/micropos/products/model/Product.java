@@ -18,4 +18,7 @@ public class Product implements Serializable {
     private double price;
 
     private String image;
+
+    private String category;
+
 }

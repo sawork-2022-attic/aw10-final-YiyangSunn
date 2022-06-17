@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.micropos.products.repository.AmazonRepository">
+
+    <resultMap id="ProductResultMap" type="Product">
+        <id column="asin" property="id"/>
+        <result column="title" property="name"/>
+        <result column="price" property="price"/>
+        <result column="main_cat" property="category"/>
+        <result column="image_url_high_res" property="image" typeHandler="ImageTypeHandler"/>
+    </resultMap>
+
+    <select id="findProduct" resultType="Product" resultMap="ProductResultMap">
+        select asin, title, image_url_high_res, RAND() * 1000 as price, main_cat
+        from product where asin = #{productId}
+    </select>
+
+    <select id="productsCount" resultType="int">
+        select count(*) from product
+        <where>
+            <if test="keyword != null">
+                and title like concat('% ', #{keyword}, ' %')
+            </if>
+            <if test="category != null">
+                and main_cat like concat(#{category}, '%')
+            </if>
+        </where>
+    </select>
+
+    <select id="productsInRange" resultType="Product" resultMap="ProductResultMap">
+        select asin, title, image_url_high_res, RAND() * 1000 as price, main_cat
+        from product
+        <where>
+            <if test="keyword != null">
+                and title like concat('% ', #{keyword}, ' %')
+            </if>
+            <if test="category != null">
+                and main_cat like concat(#{category}, '%')
+            </if>
+        </where>
+        limit #{fromIndex}, #{count}
+    </select>
+</mapper>

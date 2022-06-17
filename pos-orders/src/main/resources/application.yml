@@ -10,9 +10,9 @@ spring:
     username: root
     password: Saw0rk_2o22
   cloud:
+    function:
+      definition: # ok
     stream:
-      function:
-        autodetect: false
       bindings:
         order-out-0:
           binder: rabbit

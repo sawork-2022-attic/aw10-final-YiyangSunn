@@ -8,6 +8,11 @@ spring:
     type: ehcache
     ehcache:
       config: classpath:ehcache/conf.xml
+  datasource:
+    url: jdbc:mysql://localhost:23306/aw06_db
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: $2a$10$1P5vApro6CGetwiQYGSxF.719D2qz/nbFM8FQpP59dJi85Q/p5n6m
 
 eureka:
   instance:
@@ -33,3 +38,11 @@ resilience4j:
         waitDurationInOpenState: 10s
         permittedNumberOfCallsInHalfOpenState: 10
         automaticTransitionFromOpenToHalfOpenEnabled: true
+
+mybatis:
+  mapper-locations: classpath:mybatis/*.xml
+  type-aliases-package: com.micropos.products.model
+  type-handlers-package: com.micropos.products.model
+  configuration:
+    jdbc-type-for-null: null
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

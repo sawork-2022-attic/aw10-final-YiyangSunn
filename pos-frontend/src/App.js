@@ -5,8 +5,9 @@ import Header from "./components/Header"
 import Content from "./components/Content"
 import "antd/dist/antd.min.css"
 import "./App.css"
+import {BrowserRouter} from "react-router-dom"
 
-export const CartContext = React.createContext({});
+export const GlobalContext = React.createContext({});
 
 export default function App() {
   // 购物车清单（状态提升，用于组件间通信）
@@ -160,6 +161,17 @@ export default function App() {
     })
   }
 
+  // 商品页面的查询条件，放在这里也是为了组件间通信
+  const [filters, setFilters] = useState({
+    page: 1,
+    pageSize: 8,
+    category: null,
+    keyword: null}
+  )
+
+  // 搜索框的输入内容（因为组件之间交互比较多，现在代码很乱）
+  const [keyword, setKeyword] = useState(null)
+
   // 把数据和可用操作封装到上下文中，子组件可以直接从 context 里拿，
   // 不用一层一层传递属性，避免 prop drilling
   const value = {
@@ -169,22 +181,28 @@ export default function App() {
     requestRemoveItem,
     requestEmptyItems,
     requestCheckout,
+    filters,
+    setFilters,
+    keyword,
+    setKeyword
   }
 
   return (
-    <div className="app">
-      <CartContext.Provider value={value}>
-        <Header/>
-        <Content/>
-        <BackTop style={{width: "auto", height: "auto"}}>
-          <Button
-            className="back-top-button"
-            icon={<ArrowUpOutlined className="back-top-button-icon"/>}
-            shape="circle"
-          >
-          </Button>
-        </BackTop>
-      </CartContext.Provider>
-    </div>
+    <BrowserRouter>
+      <div className="app">
+        <GlobalContext.Provider value={value}>
+          <Header/>
+          <Content/>
+          <BackTop style={{width: "auto", height: "auto"}}>
+            <Button
+              className="back-top-button"
+              icon={<ArrowUpOutlined className="back-top-button-icon"/>}
+              shape="circle"
+            >
+            </Button>
+          </BackTop>
+        </GlobalContext.Provider>
+      </div>
+    </BrowserRouter>
   );
 }

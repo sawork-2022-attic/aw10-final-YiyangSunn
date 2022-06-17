@@ -11,10 +11,20 @@ spring:
     password: Saw0rk_2o22
   cloud:
     function:
-      definition: order
+      definition: order;phaseSupplier;phaseConsumer
     stream:
       bindings:
         order-in-0:
           binder: rabbit
           destination: orderExchange
           group: default
+        phaseSupplier-out-0:
+          binder: rabbit
+          destination: phaseExchange
+          group: default
+        phaseConsumer-in-0:
+          binder: rabbit
+          destination: phaseExchange
+          group: default
+      poller:
+        fixed-delay: 10000

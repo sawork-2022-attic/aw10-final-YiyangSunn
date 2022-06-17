@@ -33,6 +33,11 @@ spring:
           predicates:
             - Path=/api/orders/**
 
+#        - id: pos-front
+#          uri: http://localhost:3000
+#          predicates:
+#            - Path=/**
+
 eureka:
   instance:
     instance-id: pos-gateway8080

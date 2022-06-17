@@ -1,17 +1,15 @@
 package com.micropos.products.repository;
 
 import com.micropos.products.model.Product;
-import reactor.core.publisher.Mono;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface ProductRepository {
 
-    Mono<Optional<Product>> findProduct(String productId);
+    Product findProduct(String productId);
 
-    Mono<Integer> productsCount();
+    int productsCount(String keyword, String category);
 
-    Mono<List<Product>> productsInRange(int fromIndex, int count);
+    List<Product> productsInRange(int fromIndex, int count, String keyword, String category);
 
 }
