@@ -11,9 +11,9 @@ import java.util.List;
 @AllArgsConstructor
 public class Delivery {
 
-    private String orderId;
+    private String id;
 
-    private String deliveryId;
+    private String orderId;
 
     private String carrier;
 

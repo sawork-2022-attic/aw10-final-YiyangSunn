@@ -13,6 +13,8 @@ public interface DeliveryRepository {
 
     Mono<Optional<Delivery>> findDeliveryById(String deliveryId);
 
+    Mono<Optional<Delivery>> findDeliveryByOrderId(String orderId);
+
     Flux<String> getDeliveryIds();
 
     Mono<Boolean> addDeliveryPhase(String deliveryId, DeliveryPhase phase);

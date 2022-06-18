@@ -24,7 +24,8 @@
 }
 
 .order-detail-item .item-image {
-    height: 80px;
+    height: auto;
+    width: 80px;
     max-width: 80px;
 }
 

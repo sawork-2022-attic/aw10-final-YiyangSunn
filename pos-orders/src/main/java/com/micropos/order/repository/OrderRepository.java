@@ -12,6 +12,6 @@ public interface OrderRepository {
 
     Mono<Optional<Order>> findOrderById(String orderId);
 
-    Mono<Boolean> saveOrder(Order order);
+    Mono<Order> saveOrder(Order order);
 
 }

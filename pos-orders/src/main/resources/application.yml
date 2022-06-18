@@ -9,6 +9,12 @@ spring:
     port: 5672
     username: root
     password: Saw0rk_2o22
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      username: root
+      password: Saw0rk_2o22
   cloud:
     function:
       definition: # ok

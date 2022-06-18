@@ -36,9 +36,9 @@ export default function Header() {
         disabled={location.pathname === "/orders"}
         onSearch={(keyword) => {
           if (keyword.trim() !== ""){
-            setFilters({...filters, keyword})
+            setFilters({...filters, keyword, page: 1})
           } else {
-            setFilters({...filters, keyword: null})
+            setFilters({...filters, keyword: null, page: 1})
           }
         }}
       />

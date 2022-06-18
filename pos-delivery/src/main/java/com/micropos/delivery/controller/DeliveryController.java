@@ -22,8 +22,8 @@ public class DeliveryController implements DeliveryApi {
     private DeliveryMapper deliveryMapper;
 
     @Override
-    public Mono<ResponseEntity<DeliveryDto>> getDeliveryById(String deliveryId, ServerWebExchange exchange) {
-        return deliveryService.findDelivery(deliveryId).flatMap(optional -> optional.isEmpty() ?
+    public Mono<ResponseEntity<DeliveryDto>> getDeliveryByOrderId(String orderId, ServerWebExchange exchange) {
+        return deliveryService.findDeliveryByOrderId(orderId).flatMap(optional -> optional.isEmpty() ?
                         Mono.just(ResponseEntity.notFound().build()) :
                         Mono.just(ResponseEntity.ok().body(deliveryMapper.toDeliveryDto(optional.get()))));
     }

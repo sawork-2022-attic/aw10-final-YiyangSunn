@@ -14,4 +14,5 @@ public class DeliveryPhase {
     private Long timeStamp;
 
     private String message;
+
 }

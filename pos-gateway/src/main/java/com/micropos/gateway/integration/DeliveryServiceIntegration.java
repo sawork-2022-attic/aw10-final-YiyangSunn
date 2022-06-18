@@ -22,9 +22,9 @@ public class DeliveryServiceIntegration {
     public IntegrationFlow inGate() {
         return IntegrationFlows
                 .from(WebFlux
-                        .inboundGateway("/api/delivery/{deliveryId}")
+                        .inboundGateway("/api/delivery")
                         .requestMapping(r -> r.methods(HttpMethod.GET))
-                        .payloadExpression("#pathVariables.deliveryId"))
+                        .payloadExpression("#requestParams.orderId[0]"))
                 .channel(deliveryChannel())
                 .get();
     }
@@ -34,7 +34,7 @@ public class DeliveryServiceIntegration {
         return IntegrationFlows
                 .from(deliveryChannel())
                 .handle(WebFlux
-                        .outboundGateway(m -> "http://localhost:12001/api/delivery/" + m.getPayload())
+                        .outboundGateway(m -> "http://localhost:12001/api/delivery?orderId=" + m.getPayload())
                         .httpMethod(HttpMethod.GET)
                         .expectedResponseType(DeliveryDto.class)
                 )

@@ -7,7 +7,6 @@ import com.micropos.api.dto.PaymentDto;
 import com.micropos.order.mapper.OrderMapper;
 import com.micropos.order.model.Order;
 import com.micropos.order.service.OrderService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,15 +14,20 @@ import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/api")
 public class OrderController implements OrdersApi {
 
-    @Autowired
     OrderMapper orderMapper;
 
-    @Autowired
     OrderService orderService;
+
+    public OrderController(OrderMapper orderMapper, OrderService orderService) {
+        this.orderMapper = orderMapper;
+        this.orderService = orderService;
+    }
 
     @Override
     public Mono<ResponseEntity<OrderDto>> getOrderById(String orderId, ServerWebExchange exchange) {
@@ -41,11 +45,11 @@ public class OrderController implements OrdersApi {
 
     @Override
     public Mono<ResponseEntity<String>> createOrder(Mono<PaymentDto> paymentDtoMono, ServerWebExchange exchange) {
-        Mono<String> orderIdMono = paymentDtoMono.flatMap(paymentDto ->
+        Mono<Optional<String>> orderIdOptional = paymentDtoMono.flatMap(paymentDto ->
                 orderService.createOrder(paymentDto.getTotal(), paymentDto.getItems()));
-        return orderIdMono.flatMap(orderId -> orderId == null ?
+        return orderIdOptional.flatMap(optional -> optional.isEmpty() ?
                 Mono.just(ResponseEntity.badRequest().build()) :
-                Mono.just(ResponseEntity.ok(orderId)));
+                Mono.just(ResponseEntity.ok(optional.get())));
     }
 
 }

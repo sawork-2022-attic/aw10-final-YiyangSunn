@@ -5,7 +5,7 @@ import {Button, Descriptions, message, Modal, Table, Timeline} from "antd"
 import {ClockCircleOutlined, ReloadOutlined} from "@ant-design/icons"
 
 // helper functions
-const truncateUUID = id => id.substring(0, id.indexOf("-"))
+const truncateID = id => id.substring(id.length - 16)
 
 const formatUTCMillis = timeMillis => (
   new Date(timeMillis)
@@ -14,7 +14,7 @@ const formatUTCMillis = timeMillis => (
     .replace(/\..+/, "")
 )
 
-export default function OrderList(props) {
+export default function OrderList() {
   // 用于物流详情显示
   const [deli, setDeli] = useState({visible: false, data: null})
 
@@ -56,9 +56,9 @@ export default function OrderList(props) {
   }
 
   // 获取物流详情
-  const getDeliveryDetail = async deliveryId => {
+  const getDeliveryDetail = async orderId => {
     return fetch(
-      `http://localhost:8080/api/delivery/${deliveryId}`,
+      `http://localhost:8080/api/delivery?orderId=${orderId}`,
       {
         method: "GET"
       }
@@ -85,7 +85,7 @@ export default function OrderList(props) {
       title: "订单编号",
       dataIndex: "orderId",
       key: "orderId",
-      render: orderId => <span>{truncateUUID(orderId)}</span>
+      render: orderId => <span>{truncateID(orderId)}</span>
     },
     {
       title: "订单总额",
@@ -130,7 +130,7 @@ export default function OrderList(props) {
             type="link"
             style={{padding: 0, height: "100%"}}
             onClick={() => {
-              getDeliveryDetail(outline.deliveryId).then(data => {
+              getDeliveryDetail(outline.orderId).then(data => {
                 setDeli({...deli, visible: true, data})
               })
             }}
@@ -184,6 +184,7 @@ function OrderDetail(props) {
       {
         visible &&
         <Modal
+          width={600}
           title={<span>订单详情</span>}
           centered={true}
           footer={null}
@@ -191,12 +192,11 @@ function OrderDetail(props) {
           onCancel={() => setOrd({...ord, visible: false})}
         >
           <Descriptions layout="vertical" bordered={true}>
-            <Descriptions.Item label="订单号">{truncateUUID(data.orderId)}</Descriptions.Item>
-            <Descriptions.Item label="物流号">{truncateUUID(data.deliveryId)}</Descriptions.Item>
+            <Descriptions.Item label="订单号">{truncateID(data.orderId)}</Descriptions.Item>
             <Descriptions.Item label="创建时间">{formatUTCMillis(data.createdTime)}</Descriptions.Item>
-            <Descriptions.Item label="付款时间">{formatUTCMillis(data.payedTime)}</Descriptions.Item>
             <Descriptions.Item label="订单总额">{"￥" + data.total.toFixed(2)}</Descriptions.Item>
             <Descriptions.Item label="订单状态">{data.orderStatus}</Descriptions.Item>
+            <Descriptions.Item label="付款时间" span={2}>{formatUTCMillis(data.payedTime)}</Descriptions.Item>
             <Descriptions.Item label="购买的商品">
               {
                 data.items.map(item => (
@@ -206,7 +206,7 @@ function OrderDetail(props) {
                       <div className="item-name">{item.name}</div>
                     </div>
                     <div className="item-price-quantity">
-                      <span className="item-price">单价: {"￥" + item.price}</span>
+                      <span className="item-price">单价: {"￥" + item.price.toFixed(2)}</span>
                       <span className="item-quantity">购买数量: {item.quantity}</span>
                     </div>
                   </div>
@@ -231,11 +231,12 @@ function DeliveryDetail(props) {
       {
         visible &&
         <Modal
+          width={600}
           title={
             <div className="modal-header">
               <div className="delivery-detail-title">物流状态</div>
-              <div className="delivery-header-info">订单号：{truncateUUID(data.orderId)}</div>
-              <div className="delivery-header-info">物流号：{truncateUUID(data.deliveryId)}</div>
+              <div className="delivery-header-info">订单号：{truncateID(data.orderId)}</div>
+              <div className="delivery-header-info">物流号：{truncateID(data.deliveryId)}</div>
               <div className="delivery-header-info">承运人：{data.carrier}</div>
             </div>
           }
@@ -245,7 +246,7 @@ function DeliveryDetail(props) {
           onCancel={() => setDeli({...deli, visible: false})}
         >
           <div className="delivery-timeline">
-            <Timeline mode="left">
+            <Timeline mode="left" style={{width: "500px"}}>
               {
                 data.phases.map(p => (
                   <Timeline.Item

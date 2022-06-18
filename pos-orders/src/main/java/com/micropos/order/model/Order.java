@@ -12,9 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 public class Order {
 
-    private String orderId;
-
-    private String deliveryId;
+    private String id;
 
     private Long createdTime;
 
@@ -25,4 +23,5 @@ public class Order {
     private String orderStatus;
 
     private List<ItemDto> items;
+
 }

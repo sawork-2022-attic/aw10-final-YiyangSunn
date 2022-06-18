@@ -14,6 +14,6 @@ public interface OrderService {
 
     Mono<Optional<Order>> orderById(String orderId);
 
-    Mono<String> createOrder(double total, List<ItemDto> items);
+    Mono<Optional<String>> createOrder(double total, List<ItemDto> items);
 
 }

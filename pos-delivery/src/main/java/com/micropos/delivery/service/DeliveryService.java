@@ -10,6 +10,6 @@ public interface DeliveryService {
 
     void createDelivery(DeliveryInfo deliveryInfo);
 
-    Mono<Optional<Delivery>> findDelivery(String deliveryId);
+    Mono<Optional<Delivery>> findDeliveryByOrderId(String orderId);
 
 }

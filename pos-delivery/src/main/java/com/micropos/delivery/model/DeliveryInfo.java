@@ -11,7 +11,6 @@ public class DeliveryInfo {
 
     private String orderId;
 
-    private String deliveryId;
-
     private String carrier;
+
 }
