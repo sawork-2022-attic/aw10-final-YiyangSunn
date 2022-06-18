@@ -38,11 +38,6 @@ spring:
 #          predicates:
 #            - Path=/**
 
-#        - id: pos-front
-#          uri: forward:///index.html
-#          predicates:
-#            - Path=/**
-
 eureka:
   instance:
     instance-id: pos-gateway8080

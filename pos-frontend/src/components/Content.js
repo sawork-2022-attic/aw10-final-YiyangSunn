@@ -13,7 +13,6 @@ export default function Content() {
       </div>
       <div className="content-right">
         <Routes>
-          <Route path="/" element={<ProductList/>}/>
           <Route path="/sports_and_outdoors" element={<ProductList/>}/>
           <Route path="/books" element={<ProductList/>}/>
           <Route path="/video_games" element={<ProductList/>}/>
@@ -22,6 +21,7 @@ export default function Content() {
           <Route path="/amazon_home" element={<ProductList/>}/>
           <Route path="/office_products" element={<ProductList/>}/>
           <Route path="/orders" element={<OrderList/>}/>
+          <Route path="/" element={<ProductList/>}/>
         </Routes>
       </div>
     </div>

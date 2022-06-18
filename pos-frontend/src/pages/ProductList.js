@@ -1,5 +1,5 @@
 import React from "react"
-import {useContext, useRef} from "react"
+import {useContext} from "react"
 import {GlobalContext} from "../App"
 import {useRequest} from "ahooks"
 import {Button, List, message, Pagination} from "antd"
@@ -8,9 +8,6 @@ import "./ProductList.css"
 export default function ProductList() {
   // 从上下文中取操作
   const {filters, setFilters, requestAddItem} = useContext(GlobalContext)
-
-  // 记录对象引用
-  const listRef = useRef(null)
 
   // 页面第一次载入或过滤条件变化时从后端取数据
   const {data, error, loading} = useRequest(
@@ -76,7 +73,7 @@ export default function ProductList() {
   }
 
   return (
-    <div className="product-list" ref={listRef}>
+    <div className="product-list">
       <List
         dataSource={data?.products}
         grid={{column: 4, gutter: 20}}

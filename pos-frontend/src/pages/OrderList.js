@@ -202,7 +202,13 @@ function OrderDetail(props) {
                 data.items.map(item => (
                   <div className="order-detail-item" key={item.id}>
                     <div className="item-image-name">
-                      <img alt={item.image} src={item.image} className="item-image"/>
+                      <div className="item-image">
+                        <img
+                          alt={item.image}
+                          src={item.image}
+                          style={{width: "100%", height: "100%"}}
+                        />
+                      </div>
                       <div className="item-name">{item.name}</div>
                     </div>
                     <div className="item-price-quantity">

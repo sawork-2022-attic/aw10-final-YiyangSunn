@@ -5,7 +5,7 @@ import Header from "./components/Header"
 import Content from "./components/Content"
 import "antd/dist/antd.min.css"
 import "./App.css"
-import {BrowserRouter} from "react-router-dom"
+import {useLocation} from "react-router-dom";
 
 export const GlobalContext = React.createContext({});
 
@@ -161,11 +161,33 @@ export default function App() {
     })
   }
 
+  const location = useLocation()
+
+  const findCategory = () => {
+    if (location.pathname === "/sports_and_outdoors") {
+      return "Sports"
+    } else if (location.pathname === "/books") {
+      return "Books"
+    } else if (location.pathname === "/video_games") {
+      return "Video Games"
+    } else if (location.pathname === "/all_electronics") {
+      return "All Electronics"
+    } else if (location.pathname === "/automotive") {
+      return "Automotive"
+    } else if (location.pathname === "/amazon_home") {
+      return "Amazon Home"
+    } else if (location.pathname === "/office_products") {
+      return "Office Products"
+    } else {
+      return null
+    }
+  }
+
   // 商品页面的查询条件，放在这里也是为了组件间通信
   const [filters, setFilters] = useState({
     page: 1,
     pageSize: 8,
-    category: null,
+    category: findCategory(),
     keyword: null}
   )
 
@@ -188,21 +210,19 @@ export default function App() {
   }
 
   return (
-    <BrowserRouter>
-      <div className="app">
-        <GlobalContext.Provider value={value}>
-          <Header/>
-          <Content/>
-          <BackTop style={{width: "auto", height: "auto"}}>
-            <Button
-              className="back-top-button"
-              icon={<ArrowUpOutlined className="back-top-button-icon"/>}
-              shape="circle"
-            >
-            </Button>
-          </BackTop>
-        </GlobalContext.Provider>
-      </div>
-    </BrowserRouter>
+    <div className="app">
+      <GlobalContext.Provider value={value}>
+        <Header/>
+        <Content/>
+        <BackTop style={{width: "auto", height: "auto"}}>
+          <Button
+            className="back-top-button"
+            icon={<ArrowUpOutlined className="back-top-button-icon"/>}
+            shape="circle"
+          >
+          </Button>
+        </BackTop>
+      </GlobalContext.Provider>
+    </div>
   );
 }
