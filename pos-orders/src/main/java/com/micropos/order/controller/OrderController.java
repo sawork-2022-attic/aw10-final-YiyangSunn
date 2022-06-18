@@ -39,14 +39,16 @@ public class OrderController implements OrdersApi {
 
     @Override
     public Mono<ResponseEntity<Flux<OrderOutlineDto>>> getOrders(ServerWebExchange exchange) {
-        Flux<Order> orders = orderService.orders();
-        return Mono.just(ResponseEntity.ok(orders.map(orderMapper::toOrderOutlineDto)));
+        return exchange.getSession().flatMap(webSession -> {
+            Flux<Order> orders = orderService.ordersByCartId(webSession.getId());
+            return Mono.just(ResponseEntity.ok(orders.map(orderMapper::toOrderOutlineDto)));
+        });
     }
 
     @Override
-    public Mono<ResponseEntity<String>> createOrder(Mono<PaymentDto> paymentDtoMono, ServerWebExchange exchange) {
+    public Mono<ResponseEntity<String>> createOrder(String cartId, Mono<PaymentDto> paymentDtoMono, ServerWebExchange exchange) {
         Mono<Optional<String>> orderIdOptional = paymentDtoMono.flatMap(paymentDto ->
-                orderService.createOrder(paymentDto.getTotal(), paymentDto.getItems()));
+                orderService.createOrder(cartId, paymentDto.getTotal(), paymentDto.getItems()));
         return orderIdOptional.flatMap(optional -> optional.isEmpty() ?
                 Mono.just(ResponseEntity.badRequest().build()) :
                 Mono.just(ResponseEntity.ok(optional.get())));

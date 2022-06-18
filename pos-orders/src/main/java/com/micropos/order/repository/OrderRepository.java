@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface OrderRepository {
 
-    Flux<Order> findOrders();
+    Flux<Order> findOrdersByCartId(String cartId);
 
     Mono<Optional<Order>> findOrderById(String orderId);
 

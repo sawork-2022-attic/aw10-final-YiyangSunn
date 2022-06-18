@@ -7,9 +7,6 @@ import com.micropos.carts.mapper.ItemMapper;
 import com.micropos.carts.model.Item;
 import com.micropos.carts.repository.CartRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.Cacheable;
-import org.springframework.cache.annotation.Caching;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -42,40 +39,29 @@ public class SimpleCartService implements CartService {
     }
 
     @Override
-    @Cacheable(value = "items")
-    public Mono<List<Item>> items() {
-        return cartRepository.allItems().cache();
+    public Mono<List<Item>> items(String cartId) {
+        return cartRepository.allItems(cartId);
     }
 
     @Override
-    @Cacheable(value = "getItem")
-    public Mono<Optional<Item>> getItem(String productId) {
-        return cartRepository.findItem(productId).cache();
+    public Mono<Optional<Item>> getItem(String cartId, String productId) {
+        return cartRepository.findItem(cartId, productId);
     }
 
     // 保持缓存一致性
     @Override
-    @CacheEvict(value = {"items", "getItem"}, allEntries = true)
-    public Mono<Boolean> removeAll() {
-        return cartRepository.deleteAll();
+    public Mono<Boolean> removeAll(String cartId) {
+        return cartRepository.deleteAll(cartId);
     }
 
     @Override
-    @Caching(evict = {
-            @CacheEvict(value = "items", allEntries = true),
-            @CacheEvict(value = "getItem", key = "#root.args[0]")
-    })
-    public Mono<Boolean> removeItem(String productId) {
-        return cartRepository.deleteItem(productId);
+    public Mono<Boolean> removeItem(String cartId, String productId) {
+        return cartRepository.deleteItem(cartId, productId);
     }
 
     @Override
-    @Caching(evict = {
-            @CacheEvict(value = "items", allEntries = true),
-            @CacheEvict(value = "getItem", key = "#root.args[0]")
-    })
-    public Mono<Boolean> updateItem(String productId, int quantity) {
-        return cartRepository.findItem(productId).flatMap(optional -> {
+    public Mono<Boolean> updateItem(String cartId, String productId, int quantity) {
+        return cartRepository.findItem(cartId, productId).flatMap(optional -> {
             if (optional.isEmpty()) {
                 if (quantity <= 0) {
                     // 新加入的数量必须为正
@@ -92,7 +78,7 @@ public class SimpleCartService implements CartService {
                         return Mono.just(false);
                     }
                     // 加入购物车
-                    return cartRepository.insertItem(response.getBody(), quantity);
+                    return cartRepository.insertItem(cartId, response.getBody(), quantity);
                 });
             }
 
@@ -102,16 +88,16 @@ public class SimpleCartService implements CartService {
                 return Mono.just(false);
             } else if (newQuantity == 0) {
                 // 删除该物品
-                return cartRepository.deleteItem(productId);
+                return cartRepository.deleteItem(cartId, productId);
             }
             // 更新数量
-            return cartRepository.updateItem(productId, newQuantity);
+            return cartRepository.updateItem(cartId, productId, newQuantity);
         });
     }
 
     @Override
-    public Mono<Optional<String>> checkout() {
-        return cartRepository.allItems().flatMap(items -> {
+    public Mono<Optional<String>> checkout(String cartId) {
+        return cartRepository.allItems(cartId).flatMap(items -> {
             // 购物车是空的
             if (items.size() == 0) {
             return Mono.just(Optional.empty());
@@ -129,7 +115,7 @@ public class SimpleCartService implements CartService {
                 // 生成订单
                 PaymentDto paymentDto = new PaymentDto().total(totalResponse.getBody()).items(itemDtoList);
                 Mono<ResponseEntity<String>> OrderIdResponseMono = webClient
-                        .post().uri(POS_ORDER_URL + "/orders").bodyValue(paymentDto)
+                        .post().uri(POS_ORDER_URL + "/orders?cartId=" + cartId).bodyValue(paymentDto)
                         .retrieve().toEntity(String.class);
                 return OrderIdResponseMono.flatMap(orderIdResponse -> {
                     if (!orderIdResponse.getStatusCode().equals(HttpStatus.OK)) {

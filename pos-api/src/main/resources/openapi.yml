@@ -189,7 +189,7 @@ paths:
 
   /orders:
     get:
-      summary: Get the outline of all orders
+      summary: Get the outline of orders related to current session
       operationId: getOrders
       responses:
         200:
@@ -199,10 +199,17 @@ paths:
               schema:
                 $ref: "#/components/schemas/OrderOutlines"
     post:
-      summary: Create a new order
+      summary: Create a new order associated with the specified cart
       operationId: createOrder
+      parameters:
+        - name: cartId
+          in: query
+          required: true
+          description: the cart ID to create this order
+          schema:
+            type: string
       requestBody:
-        description: The data
+        description: The payment data
         required: true
         content:
           application/json:

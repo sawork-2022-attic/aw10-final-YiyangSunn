@@ -48,11 +48,13 @@ public class ProductController implements ProductsApi {
                 });
     }
 
-    public Mono<ResponseEntity<ProductDto>> getProductByIdFallback(Throwable throwable) {
+    private Mono<ResponseEntity<ProductDto>> getProductByIdFallback(Throwable throwable) {
+        throwable.printStackTrace();
         return Mono.just(ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).build());
     }
 
-    public Mono<ResponseEntity<PageResultDto>> getProductsInPageFallback(Throwable throwable) {
+    private Mono<ResponseEntity<PageResultDto>> getProductsInPageFallback(Throwable throwable) {
+        throwable.printStackTrace();
         return Mono.just(ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).build());
     }
 

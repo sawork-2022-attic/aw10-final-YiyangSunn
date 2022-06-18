@@ -42,7 +42,7 @@ public class DeliveryConfiguration {
     @Bean
     public Consumer<String> phaseConsumer() {
         return (secret) -> {
-            log.info("Receive secret: " + secret);
+//            log.info("Receive secret: " + secret);
             if (secret.equals("do add phase")) {
                 // 为每个物流对象添加一条新状态，至多7条
                 deliveryRepository.getDeliveryIds().subscribe(deliveryId ->

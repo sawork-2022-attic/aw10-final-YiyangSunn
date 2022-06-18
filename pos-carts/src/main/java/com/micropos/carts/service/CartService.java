@@ -8,16 +8,16 @@ import java.util.Optional;
 
 public interface CartService {
 
-    Mono<List<Item>> items();
+    Mono<List<Item>> items(String cartId);
 
-    Mono<Optional<Item>> getItem(String productId);
+    Mono<Optional<Item>> getItem(String cartId, String productId);
 
-    Mono<Boolean> removeAll();
+    Mono<Boolean> removeAll(String cartId);
 
-    Mono<Boolean> removeItem(String productId);
+    Mono<Boolean> removeItem(String cartId, String productId);
 
-    Mono<Boolean> updateItem(String productId, int quantity);
+    Mono<Boolean> updateItem(String cartId, String productId, int quantity);
 
-    Mono<Optional<String>> checkout();
+    Mono<Optional<String>> checkout(String cartId);
 
 }

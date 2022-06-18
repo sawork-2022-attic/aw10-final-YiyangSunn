@@ -10,10 +10,10 @@ import java.util.Optional;
 
 public interface OrderService {
 
-    Flux<Order> orders();
+    Flux<Order> ordersByCartId(String cartId);
 
     Mono<Optional<Order>> orderById(String orderId);
 
-    Mono<Optional<String>> createOrder(double total, List<ItemDto> items);
+    Mono<Optional<String>> createOrder(String cartId, double total, List<ItemDto> items);
 
 }

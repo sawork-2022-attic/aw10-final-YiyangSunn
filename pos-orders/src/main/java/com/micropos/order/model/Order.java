@@ -14,6 +14,8 @@ public class Order {
 
     private String id;
 
+    private String cartId;
+
     private Long createdTime;
 
     private Long payedTime;

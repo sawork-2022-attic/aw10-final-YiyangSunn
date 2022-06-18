@@ -4,9 +4,17 @@ server:
 spring:
   application:
     name: pos-carts
-  cache:
-    ehcache:
-      config: classpath:ehcache/conf.xml
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      username: root
+      password: Saw0rk_2o22
+  redis:
+    host: localhost
+    port: 6379
+  session:
+    store-type: redis
 
 eureka:
   instance:

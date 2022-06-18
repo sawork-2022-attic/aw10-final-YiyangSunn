@@ -3,6 +3,8 @@ package com.micropos.order.repository;
 import com.micropos.order.model.Order;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -22,9 +24,11 @@ public class MongoOrderRepository implements OrderRepository {
     }
 
     @Override
-    public Flux<Order> findOrders() {
-        return Mono.fromCallable(() -> mongoTemplate.findAll(Order.class, COLLECTION))
-                .flatMapMany(Flux::fromIterable);
+    public Flux<Order> findOrdersByCartId(String cartId) {
+        return Mono.fromCallable(() -> {
+            Query query = new Query().addCriteria(Criteria.where("cartId").is(cartId));
+            return mongoTemplate.find(query, Order.class, COLLECTION);
+        }).flatMapMany(Flux::fromIterable);
     }
 
     @Override

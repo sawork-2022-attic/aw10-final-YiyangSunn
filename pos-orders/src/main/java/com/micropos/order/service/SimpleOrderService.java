@@ -27,8 +27,8 @@ public class SimpleOrderService implements OrderService {
     }
 
     @Override
-    public Flux<Order> orders() {
-        return orderRepository.findOrders();
+    public Flux<Order> ordersByCartId(String cartId) {
+        return orderRepository.findOrdersByCartId(cartId);
     }
 
     @Override
@@ -37,9 +37,10 @@ public class SimpleOrderService implements OrderService {
     }
 
     @Override
-    public Mono<Optional<String>> createOrder(double total, List<ItemDto> items) {
+    public Mono<Optional<String>> createOrder(String cartId, double total, List<ItemDto> items) {
         // 创建一份订单
         Order order = new Order();
+        order.setCartId(cartId);
         order.setCreatedTime(System.currentTimeMillis());
         order.setPayedTime(System.currentTimeMillis() + 60 * 1000);
         order.setTotal(total);
