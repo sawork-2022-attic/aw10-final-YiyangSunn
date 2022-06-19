@@ -1,0 +1,425 @@
+2022-06-19 17:39:20,438 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2022-06-19 17:39:20,452 INFO o.a.j.JMeter: Loading user properties from: /home/alwayssmiling/software/apache-jmeter-5.4.3/bin/user.properties
+2022-06-19 17:39:20,452 INFO o.a.j.JMeter: Loading system properties from: /home/alwayssmiling/software/apache-jmeter-5.4.3/bin/system.properties
+2022-06-19 17:39:20,457 INFO o.a.j.JMeter: Copyright (c) 1998-2021 The Apache Software Foundation
+2022-06-19 17:39:20,457 INFO o.a.j.JMeter: Version 5.4.3
+2022-06-19 17:39:20,457 INFO o.a.j.JMeter: java.version=11.0.14.1
+2022-06-19 17:39:20,457 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2022-06-19 17:39:20,457 INFO o.a.j.JMeter: os.name=Linux
+2022-06-19 17:39:20,458 INFO o.a.j.JMeter: os.arch=amd64
+2022-06-19 17:39:20,458 INFO o.a.j.JMeter: os.version=5.17.0-kali3-amd64
+2022-06-19 17:39:20,458 INFO o.a.j.JMeter: file.encoding=UTF-8
+2022-06-19 17:39:20,458 INFO o.a.j.JMeter: java.awt.headless=true
+2022-06-19 17:39:20,458 INFO o.a.j.JMeter: Max memory     =1073741824
+2022-06-19 17:39:20,458 INFO o.a.j.JMeter: Available Processors =12
+2022-06-19 17:39:20,464 INFO o.a.j.JMeter: Default Locale=English (EN)
+2022-06-19 17:39:20,464 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2022-06-19 17:39:20,464 INFO o.a.j.JMeter: JMeterHome=/home/alwayssmiling/software/apache-jmeter-5.4.3
+2022-06-19 17:39:20,464 INFO o.a.j.JMeter: user.dir  =/mnt/d/2022_spring/软件体系结构/hw/aw10-final/jmeter
+2022-06-19 17:39:20,464 INFO o.a.j.JMeter: PWD       =/mnt/d/2022_spring/软件体系结构/hw/aw10-final/jmeter
+2022-06-19 17:39:20,465 INFO o.a.j.JMeter: IP: 127.0.1.1 Name: kali FullName: kali
+2022-06-19 17:39:20,467 INFO o.a.j.JMeter: Setting property 'jmeter.reportgenerator.outputdir' to:'/mnt/d/2022_spring/软件体系结构/hw/aw10-final/jmeter/./products/with-index'
+2022-06-19 17:39:20,479 INFO o.a.j.s.FileServer: Default base='/mnt/d/2022_spring/软件体系结构/hw/aw10-final/jmeter'
+2022-06-19 17:39:20,480 INFO o.a.j.s.FileServer: Set new base='/mnt/d/2022_spring/软件体系结构/hw/aw10-final/jmeter'
+2022-06-19 17:39:20,581 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2022-06-19 17:39:20,594 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2022-06-19 17:39:20,596 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2022-06-19 17:39:20,598 INFO o.a.j.s.SaveService: Loading file: Test-Products.jmx
+2022-06-19 17:39:20,624 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2022-06-19 17:39:20,624 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2022-06-19 17:39:20,624 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2022-06-19 17:39:20,624 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2022-06-19 17:39:20,624 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2022-06-19 17:39:20,624 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2022-06-19 17:39:20,649 INFO o.a.j.JMeter: Creating summariser <summary>
+2022-06-19 17:39:20,654 INFO o.a.j.r.d.ReportGenerator: ReportGenerator will use for Parsing the separator: ','
+2022-06-19 17:39:20,654 INFO o.a.j.r.d.ReportGenerator: Will generate report at end of test from  results file: ./products/with-index/run.log
+2022-06-19 17:39:20,654 INFO o.a.j.r.d.ReportGenerator: Reading report generator properties from: /home/alwayssmiling/software/apache-jmeter-5.4.3/bin/reportgenerator.properties
+2022-06-19 17:39:20,655 INFO o.a.j.r.d.ReportGenerator: Merging with JMeter properties
+2022-06-19 17:39:20,657 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.temp_dir' not found, using default value 'temp' instead.
+2022-06-19 17:39:20,659 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.apdex_per_transaction' not found, using default value 'null' instead.
+2022-06-19 17:39:20,659 INFO o.a.j.r.c.ReportGeneratorConfiguration: apdex_per_transaction is empty, not APDEX per transaction customization
+2022-06-19 17:39:20,659 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.sample_filter' not found, using default value 'null' instead.
+2022-06-19 17:39:20,659 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.report_title' not found, using default value 'null' instead.
+2022-06-19 17:39:20,659 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.start_date' not found, using default value 'null' instead.
+2022-06-19 17:39:20,659 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.end_date' not found, using default value 'null' instead.
+2022-06-19 17:39:20,659 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.date_format' not found, using default value 'null' instead.
+2022-06-19 17:39:20,660 INFO o.a.j.r.c.ReportGeneratorConfiguration: Will use date range start date: null, end date: null
+2022-06-19 17:39:20,662 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.totalTPS.exclude_controllers' not found, using default value 'false' instead.
+2022-06-19 17:39:20,663 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.activeThreadsOverTime.exclude_controllers' not found, using default value 'false' instead.
+2022-06-19 17:39:20,663 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.timeVsThreads.exclude_controllers' not found, using default value 'false' instead.
+2022-06-19 17:39:20,663 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimeDistribution.exclude_controllers' not found, using default value 'false' instead.
+2022-06-19 17:39:20,663 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.transactionsPerSecond.exclude_controllers' not found, using default value 'false' instead.
+2022-06-19 17:39:20,663 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentiles.exclude_controllers' not found, using default value 'false' instead.
+2022-06-19 17:39:20,664 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentilesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2022-06-19 17:39:20,664 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2022-06-19 17:39:20,664 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.connectTimeOverTime.exclude_controllers' not found, using default value 'false' instead.
+2022-06-19 17:39:20,664 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.latenciesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2022-06-19 17:39:20,665 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.filters_only_sample_series' not found, using default value 'true' instead.
+2022-06-19 17:39:20,665 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.series_filter' not found, using default value '' instead.
+2022-06-19 17:39:20,665 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.show_controllers_only' not found, using default value 'false' instead.
+2022-06-19 17:39:20,665 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.filters_only_sample_series' not found, using default value 'true' instead.
+2022-06-19 17:39:20,666 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.series_filter' not found, using default value '' instead.
+2022-06-19 17:39:20,666 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.show_controllers_only' not found, using default value 'false' instead.
+2022-06-19 17:39:20,668 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2022-06-19 17:39:20,669 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2022-06-19 17:39:20,669 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2022-06-19 17:39:20,675 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2022-06-19 17:39:20,675 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2022-06-19 17:39:20,840 INFO o.a.j.JMeter: Running test (1655631560840)
+2022-06-19 17:39:20,859 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Thread Group
+2022-06-19 17:39:20,860 INFO o.a.j.e.StandardJMeterEngine: Starting 100 threads for group Thread Group.
+2022-06-19 17:39:20,860 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2022-06-19 17:39:20,860 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=100 ramp-up=1 delayedStart=false
+2022-06-19 17:39:20,868 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-1
+2022-06-19 17:39:20,874 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-2
+2022-06-19 17:39:20,881 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = kali
+2022-06-19 17:39:20,882 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-3
+2022-06-19 17:39:20,886 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
+2022-06-19 17:39:20,887 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2022-06-19 17:39:20,887 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to ISO-8859-1
+2022-06-19 17:39:20,888 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2022-06-19 17:39:20,888 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2022-06-19 17:39:20,892 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-4
+2022-06-19 17:39:20,902 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-5
+2022-06-19 17:39:20,912 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-6
+2022-06-19 17:39:20,928 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2022-06-19 17:39:20,936 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-8
+2022-06-19 17:39:20,937 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2022-06-19 17:39:20,942 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-9
+2022-06-19 17:39:20,951 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-10
+2022-06-19 17:39:20,961 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-11
+2022-06-19 17:39:20,972 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-12
+2022-06-19 17:39:20,982 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-13
+2022-06-19 17:39:20,922 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-7
+2022-06-19 17:39:20,992 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-14
+2022-06-19 17:39:21,002 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-15
+2022-06-19 17:39:21,011 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-16
+2022-06-19 17:39:21,022 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-17
+2022-06-19 17:39:21,032 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-18
+2022-06-19 17:39:21,041 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-19
+2022-06-19 17:39:21,051 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-20
+2022-06-19 17:39:21,062 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-21
+2022-06-19 17:39:21,071 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-22
+2022-06-19 17:39:21,081 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-23
+2022-06-19 17:39:21,091 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-24
+2022-06-19 17:39:21,102 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-25
+2022-06-19 17:39:21,112 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-26
+2022-06-19 17:39:21,121 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-27
+2022-06-19 17:39:21,131 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-28
+2022-06-19 17:39:21,142 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-29
+2022-06-19 17:39:21,151 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-30
+2022-06-19 17:39:21,161 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-31
+2022-06-19 17:39:21,171 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-32
+2022-06-19 17:39:21,181 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-33
+2022-06-19 17:39:21,192 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-34
+2022-06-19 17:39:21,201 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-35
+2022-06-19 17:39:21,211 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-36
+2022-06-19 17:39:21,222 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-37
+2022-06-19 17:39:21,231 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-38
+2022-06-19 17:39:21,241 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-39
+2022-06-19 17:39:21,251 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-40
+2022-06-19 17:39:21,262 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-41
+2022-06-19 17:39:21,272 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-42
+2022-06-19 17:39:21,282 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-43
+2022-06-19 17:39:21,292 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-44
+2022-06-19 17:39:21,301 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-45
+2022-06-19 17:39:21,311 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-46
+2022-06-19 17:39:21,321 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-47
+2022-06-19 17:39:21,331 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-48
+2022-06-19 17:39:21,341 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-49
+2022-06-19 17:39:21,352 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-50
+2022-06-19 17:39:21,361 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-51
+2022-06-19 17:39:21,371 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-52
+2022-06-19 17:39:21,382 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-53
+2022-06-19 17:39:21,392 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-54
+2022-06-19 17:39:21,402 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-55
+2022-06-19 17:39:21,412 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-56
+2022-06-19 17:39:21,421 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-57
+2022-06-19 17:39:21,431 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-58
+2022-06-19 17:39:21,441 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-59
+2022-06-19 17:39:21,452 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-60
+2022-06-19 17:39:21,461 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-61
+2022-06-19 17:39:21,471 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-62
+2022-06-19 17:39:21,481 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-63
+2022-06-19 17:39:21,491 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-64
+2022-06-19 17:39:21,501 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-65
+2022-06-19 17:39:21,512 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-66
+2022-06-19 17:39:21,521 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-67
+2022-06-19 17:39:21,531 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-68
+2022-06-19 17:39:21,541 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-69
+2022-06-19 17:39:21,551 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-70
+2022-06-19 17:39:21,561 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-71
+2022-06-19 17:39:21,571 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-72
+2022-06-19 17:39:21,581 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-73
+2022-06-19 17:39:21,591 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-74
+2022-06-19 17:39:21,601 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-75
+2022-06-19 17:39:21,610 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-76
+2022-06-19 17:39:21,621 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-77
+2022-06-19 17:39:21,631 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-78
+2022-06-19 17:39:21,640 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-79
+2022-06-19 17:39:21,651 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-80
+2022-06-19 17:39:21,661 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-81
+2022-06-19 17:39:21,670 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-82
+2022-06-19 17:39:21,681 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-83
+2022-06-19 17:39:21,691 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-84
+2022-06-19 17:39:21,700 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-85
+2022-06-19 17:39:21,711 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-86
+2022-06-19 17:39:21,721 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-87
+2022-06-19 17:39:21,730 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-88
+2022-06-19 17:39:21,741 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-89
+2022-06-19 17:39:21,751 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-90
+2022-06-19 17:39:21,760 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-91
+2022-06-19 17:39:21,771 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-92
+2022-06-19 17:39:21,781 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-93
+2022-06-19 17:39:21,790 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-94
+2022-06-19 17:39:21,801 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-95
+2022-06-19 17:39:21,811 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-96
+2022-06-19 17:39:21,820 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-97
+2022-06-19 17:39:21,831 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-98
+2022-06-19 17:39:21,841 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-99
+2022-06-19 17:39:21,859 INFO o.a.j.t.JMeterThread: Thread started: Thread Group 1-100
+2022-06-19 17:39:25,893 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-1
+2022-06-19 17:39:25,893 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-1
+2022-06-19 17:39:25,895 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-90
+2022-06-19 17:39:25,896 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-90
+2022-06-19 17:39:25,896 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-21
+2022-06-19 17:39:25,896 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-21
+2022-06-19 17:39:25,898 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-2
+2022-06-19 17:39:25,898 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-2
+2022-06-19 17:39:25,899 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-30
+2022-06-19 17:39:25,899 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-30
+2022-06-19 17:39:25,900 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-5
+2022-06-19 17:39:25,900 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-5
+2022-06-19 17:39:25,903 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-81
+2022-06-19 17:39:25,903 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-81
+2022-06-19 17:39:25,903 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-19
+2022-06-19 17:39:25,904 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-19
+2022-06-19 17:39:25,906 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-12
+2022-06-19 17:39:25,907 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-12
+2022-06-19 17:39:25,908 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-78
+2022-06-19 17:39:25,908 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-78
+2022-06-19 17:39:25,908 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-79
+2022-06-19 17:39:25,908 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-10
+2022-06-19 17:39:25,909 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-79
+2022-06-19 17:39:25,909 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-10
+2022-06-19 17:39:25,911 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-42
+2022-06-19 17:39:25,911 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-42
+2022-06-19 17:39:25,913 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-33
+2022-06-19 17:39:25,913 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-33
+2022-06-19 17:39:25,914 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-20
+2022-06-19 17:39:25,915 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-20
+2022-06-19 17:39:25,915 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-69
+2022-06-19 17:39:25,915 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-69
+2022-06-19 17:39:25,916 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-68
+2022-06-19 17:39:25,916 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-9
+2022-06-19 17:39:25,917 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-9
+2022-06-19 17:39:25,917 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-18
+2022-06-19 17:39:25,917 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-68
+2022-06-19 17:39:25,925 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-18
+2022-06-19 17:39:25,924 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-66
+2022-06-19 17:39:25,925 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-66
+2022-06-19 17:39:25,925 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-41
+2022-06-19 17:39:25,924 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-31
+2022-06-19 17:39:25,925 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-31
+2022-06-19 17:39:25,926 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-45
+2022-06-19 17:39:25,924 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-91
+2022-06-19 17:39:25,926 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-45
+2022-06-19 17:39:25,924 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-93
+2022-06-19 17:39:25,923 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-54
+2022-06-19 17:39:25,923 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-4
+2022-06-19 17:39:25,927 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-4
+2022-06-19 17:39:25,923 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-22
+2022-06-19 17:39:25,927 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-92
+2022-06-19 17:39:25,923 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-82
+2022-06-19 17:39:25,927 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-92
+2022-06-19 17:39:25,923 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-32
+2022-06-19 17:39:25,928 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-32
+2022-06-19 17:39:25,922 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-46
+2022-06-19 17:39:25,928 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-46
+2022-06-19 17:39:25,929 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-44
+2022-06-19 17:39:25,929 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-47
+2022-06-19 17:39:25,927 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-22
+2022-06-19 17:39:25,929 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-53
+2022-06-19 17:39:25,929 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-53
+2022-06-19 17:39:25,927 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-82
+2022-06-19 17:39:25,927 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-89
+2022-06-19 17:39:25,927 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-70
+2022-06-19 17:39:25,927 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-54
+2022-06-19 17:39:25,927 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-93
+2022-06-19 17:39:25,926 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-91
+2022-06-19 17:39:25,926 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-77
+2022-06-19 17:39:25,931 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-77
+2022-06-19 17:39:25,926 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-57
+2022-06-19 17:39:25,925 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-56
+2022-06-19 17:39:25,932 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-57
+2022-06-19 17:39:25,932 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-94
+2022-06-19 17:39:25,932 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-56
+2022-06-19 17:39:25,931 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-55
+2022-06-19 17:39:25,932 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-55
+2022-06-19 17:39:25,932 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-29
+2022-06-19 17:39:25,932 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-29
+2022-06-19 17:39:25,933 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-43
+2022-06-19 17:39:25,933 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-43
+2022-06-19 17:39:25,931 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-17
+2022-06-19 17:39:25,930 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-70
+2022-06-19 17:39:25,930 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-58
+2022-06-19 17:39:25,933 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-58
+2022-06-19 17:39:25,930 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-89
+2022-06-19 17:39:25,934 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-67
+2022-06-19 17:39:25,934 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-65
+2022-06-19 17:39:25,934 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-67
+2022-06-19 17:39:25,930 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-80
+2022-06-19 17:39:25,929 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-47
+2022-06-19 17:39:25,929 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-44
+2022-06-19 17:39:25,928 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-34
+2022-06-19 17:39:25,934 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-80
+2022-06-19 17:39:25,934 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-65
+2022-06-19 17:39:25,933 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-17
+2022-06-19 17:39:25,932 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-41
+2022-06-19 17:39:25,934 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-34
+2022-06-19 17:39:25,935 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-94
+2022-06-19 17:39:25,937 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-35
+2022-06-19 17:39:25,937 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-35
+2022-06-19 17:39:25,938 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-83
+2022-06-19 17:39:25,938 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-83
+2022-06-19 17:39:25,938 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-95
+2022-06-19 17:39:25,939 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-95
+2022-06-19 17:39:25,939 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-59
+2022-06-19 17:39:25,939 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-59
+2022-06-19 17:39:25,940 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-23
+2022-06-19 17:39:25,940 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-23
+2022-06-19 17:39:25,942 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-71
+2022-06-19 17:39:25,943 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-71
+2022-06-19 17:39:26,025 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-13
+2022-06-19 17:39:26,025 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-13
+2022-06-19 17:39:26,032 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-96
+2022-06-19 17:39:26,032 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-96
+2022-06-19 17:39:26,032 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-37
+2022-06-19 17:39:26,032 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-37
+2022-06-19 17:39:26,033 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-6
+2022-06-19 17:39:26,034 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-6
+2022-06-19 17:39:26,034 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-49
+2022-06-19 17:39:26,034 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-49
+2022-06-19 17:39:26,035 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-61
+2022-06-19 17:39:26,035 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-61
+2022-06-19 17:39:26,035 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-72
+2022-06-19 17:39:26,035 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-7
+2022-06-19 17:39:26,036 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-72
+2022-06-19 17:39:26,036 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-7
+2022-06-19 17:39:26,036 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-85
+2022-06-19 17:39:26,037 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-85
+2022-06-19 17:39:26,037 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-84
+2022-06-19 17:39:26,037 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-25
+2022-06-19 17:39:26,037 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-84
+2022-06-19 17:39:26,037 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-25
+2022-06-19 17:39:26,038 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-60
+2022-06-19 17:39:26,038 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-73
+2022-06-19 17:39:26,038 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-60
+2022-06-19 17:39:26,038 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-73
+2022-06-19 17:39:26,039 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-97
+2022-06-19 17:39:26,039 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-48
+2022-06-19 17:39:26,040 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-97
+2022-06-19 17:39:26,040 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-48
+2022-06-19 17:39:26,041 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-24
+2022-06-19 17:39:26,041 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-24
+2022-06-19 17:39:26,042 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-36
+2022-06-19 17:39:26,042 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-8
+2022-06-19 17:39:26,042 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-36
+2022-06-19 17:39:26,042 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-8
+2022-06-19 17:39:26,044 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-74
+2022-06-19 17:39:26,044 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-74
+2022-06-19 17:39:26,046 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-62
+2022-06-19 17:39:26,046 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-62
+2022-06-19 17:39:26,047 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-86
+2022-06-19 17:39:26,047 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-86
+2022-06-19 17:39:26,048 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-98
+2022-06-19 17:39:26,048 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-98
+2022-06-19 17:39:26,049 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-38
+2022-06-19 17:39:26,049 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-38
+2022-06-19 17:39:26,050 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-14
+2022-06-19 17:39:26,050 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-14
+2022-06-19 17:39:26,051 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-26
+2022-06-19 17:39:26,051 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-26
+2022-06-19 17:39:26,052 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-50
+2022-06-19 17:39:26,052 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-50
+2022-06-19 17:39:26,052 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-16
+2022-06-19 17:39:26,053 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-16
+2022-06-19 17:39:26,056 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-3
+2022-06-19 17:39:26,056 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-3
+2022-06-19 17:39:26,058 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-88
+2022-06-19 17:39:26,058 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-88
+2022-06-19 17:39:26,060 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-100
+2022-06-19 17:39:26,060 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-100
+2022-06-19 17:39:26,061 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-28
+2022-06-19 17:39:26,061 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-28
+2022-06-19 17:39:26,064 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-52
+2022-06-19 17:39:26,064 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-52
+2022-06-19 17:39:26,066 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-40
+2022-06-19 17:39:26,066 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-40
+2022-06-19 17:39:26,067 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-64
+2022-06-19 17:39:26,067 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-64
+2022-06-19 17:39:26,068 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-76
+2022-06-19 17:39:26,068 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-76
+2022-06-19 17:39:26,144 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-27
+2022-06-19 17:39:26,144 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-27
+2022-06-19 17:39:26,147 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-39
+2022-06-19 17:39:26,147 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-39
+2022-06-19 17:39:26,148 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-11
+2022-06-19 17:39:26,148 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-11
+2022-06-19 17:39:26,150 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-15
+2022-06-19 17:39:26,151 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-15
+2022-06-19 17:39:26,152 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-75
+2022-06-19 17:39:26,152 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-75
+2022-06-19 17:39:26,153 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-63
+2022-06-19 17:39:26,153 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-63
+2022-06-19 17:39:26,154 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-99
+2022-06-19 17:39:26,154 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-99
+2022-06-19 17:39:26,154 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-87
+2022-06-19 17:39:26,155 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-87
+2022-06-19 17:39:26,155 INFO o.a.j.t.JMeterThread: Thread is done: Thread Group 1-51
+2022-06-19 17:39:26,156 INFO o.a.j.t.JMeterThread: Thread finished: Thread Group 1-51
+2022-06-19 17:39:26,156 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2022-06-19 17:39:26,157 INFO o.a.j.r.Summariser: summary =  18000 in 00:00:05 = 3386.0/s Avg:    25 Min:     1 Max:  2206 Err:     0 (0.00%)
+2022-06-19 17:39:26,157 INFO o.a.j.JMeter: Generating Dashboard
+2022-06-19 17:39:26,157 INFO o.a.j.r.d.ReportGenerator: Flushing result collector before report Generation
+2022-06-19 17:39:26,166 INFO o.a.j.r.p.NormalizerSampleConsumer: Using format, 'ms', to parse timeStamp field
+2022-06-19 17:39:26,740 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.AggregateConsumer#stopProducing(): beginDate produced 0 samples
+2022-06-19 17:39:26,740 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.AggregateConsumer#stopProducing(): endDate produced 0 samples
+2022-06-19 17:39:26,741 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.ApdexSummaryConsumer#stopProducing(): apdexSummary produced 0 samples
+2022-06-19 17:39:26,741 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.RequestsSummaryConsumer#stopProducing(): requestsSummary produced 0 samples
+2022-06-19 17:39:26,750 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.StatisticsSummaryConsumer#stopProducing(): statisticsSummary produced 0 samples
+2022-06-19 17:39:26,751 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.Top5ErrorsBySamplerConsumer#stopProducing(): top5ErrorsBySampler produced 0 samples
+2022-06-19 17:39:26,751 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.ErrorsSummaryConsumer#stopProducing(): errorsSummary produced 0 samples
+2022-06-19 17:39:26,751 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.HitsPerSecondGraphConsumer#stopProducing(): hitsPerSecond produced 0 samples
+2022-06-19 17:39:26,860 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.LatencyVSRequestGraphConsumer#stopProducing(): latencyVsRequest produced 0 samples
+2022-06-19 17:39:26,860 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.SyntheticResponseTimeDistributionGraphConsumer#stopProducing(): syntheticResponseTimeDistribution produced 0 samples
+2022-06-19 17:39:26,861 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.BytesThroughputGraphConsumer#stopProducing(): bytesThroughputOverTime produced 0 samples
+2022-06-19 17:39:26,861 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.CodesPerSecondGraphConsumer#stopProducing(): codesPerSecond produced 0 samples
+2022-06-19 17:39:26,951 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeVSRequestGraphConsumer#stopProducing(): responseTimeVsRequest produced 0 samples
+2022-06-19 17:39:26,951 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): startIntervalControlerFilter produced 126000 samples
+2022-06-19 17:39:26,952 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TotalTPSGraphConsumer#stopProducing(): totalTPS produced 0 samples
+2022-06-19 17:39:26,952 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ActiveThreadsGraphConsumer#stopProducing(): activeThreadsOverTime produced 0 samples
+2022-06-19 17:39:26,952 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TimeVSThreadGraphConsumer#stopProducing(): timeVsThreads produced 0 samples
+2022-06-19 17:39:26,953 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeDistributionGraphConsumer#stopProducing(): responseTimeDistribution produced 0 samples
+2022-06-19 17:39:26,953 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TransactionsPerSecondGraphConsumer#stopProducing(): transactionsPerSecond produced 0 samples
+2022-06-19 17:39:26,953 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimePercentilesGraphConsumer#stopProducing(): responseTimePercentiles produced 0 samples
+2022-06-19 17:39:26,959 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimePercentilesOverTimeGraphConsumer#stopProducing(): responseTimePercentilesOverTime produced 0 samples
+2022-06-19 17:39:26,960 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeOverTimeGraphConsumer#stopProducing(): responseTimesOverTime produced 0 samples
+2022-06-19 17:39:26,961 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ConnectTimeOverTimeGraphConsumer#stopProducing(): connectTimeOverTime produced 0 samples
+2022-06-19 17:39:26,961 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.LatencyOverTimeGraphConsumer#stopProducing(): latenciesOverTime produced 0 samples
+2022-06-19 17:39:26,961 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): nameFilter produced 270000 samples
+2022-06-19 17:39:26,961 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): dateRangeFilter produced 54000 samples
+2022-06-19 17:39:26,961 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.NormalizerSampleConsumer#stopProducing(): normalizer produced 18000 samples
+2022-06-19 17:39:26,962 INFO o.a.j.r.p.CsvFileSampleSource: produce(): 18000 samples produced in 782ms on channel 0
+2022-06-19 17:39:26,962 INFO o.a.j.r.d.ReportGenerator: Exporting data using exporter:'json' of className:'org.apache.jmeter.report.dashboard.JsonExporter'
+2022-06-19 17:39:27,038 INFO o.a.j.r.d.JsonExporter: Found data for consumer statisticsSummary in context
+2022-06-19 17:39:27,038 INFO o.a.j.r.d.JsonExporter: Creating statistics for overall
+2022-06-19 17:39:27,039 INFO o.a.j.r.d.JsonExporter: Creating statistics for other transactions
+2022-06-19 17:39:27,039 INFO o.a.j.r.d.JsonExporter: Checking output folder
+2022-06-19 17:39:27,040 INFO o.a.j.r.d.JsonExporter: Writing statistics JSON to /mnt/d/2022_spring/软件体系结构/hw/aw10-final/jmeter/./products/with-index/statistics.json
+2022-06-19 17:39:27,065 INFO o.a.j.r.d.ReportGenerator: Exporting data using exporter:'html' of className:'org.apache.jmeter.report.dashboard.HtmlTemplateExporter'
+2022-06-19 17:39:27,067 INFO o.a.j.r.d.HtmlTemplateExporter: Will generate dashboard in folder: /mnt/d/2022_spring/软件体系结构/hw/aw10-final/jmeter/./products/with-index
+2022-06-19 17:39:27,145 INFO o.a.j.r.d.HtmlTemplateExporter: Report will be generated in: /mnt/d/2022_spring/软件体系结构/hw/aw10-final/jmeter/./products/with-index, creating folder structure
+2022-06-19 17:39:27,147 INFO o.a.j.r.d.TemplateVisitor: Copying folder from '/home/alwayssmiling/software/apache-jmeter-5.4.3/bin/report-template' to '/mnt/d/2022_spring/软件体系结构/hw/aw10-final/jmeter/./products/with-index', got message: /mnt/d/2022_spring/软件体系结构/hw/aw10-final/jmeter/./products/with-index, found non empty folder with following content [/mnt/d/2022_spring/软件体系结构/hw/aw10-final/jmeter/./products/with-index/run.log, /mnt/d/2022_spring/软件体系结构/hw/aw10-final/jmeter/./products/with-index/statistics.json], will be ignored
+2022-06-19 17:39:27,315 INFO o.a.j.JMeter: Dashboard generated

@@ -21,7 +21,7 @@
         select count(*) from product
         <where>
             <if test="keyword != null">
-                and title like concat('% ', #{keyword}, ' %')
+                and match(title) against(#{keyword})
             </if>
             <if test="category != null">
                 and main_cat like concat(#{category}, '%')
@@ -29,17 +29,32 @@
         </where>
     </select>
 
-    <select id="productsInRange" resultType="Product" resultMap="ProductResultMap">
-        select asin, title, image_url_high_res, RAND() * 1000 as price, main_cat
-        from product
+    <select id="productIdsInRange" resultType="string">
+        select asin from product
         <where>
             <if test="keyword != null">
-                and title like concat('% ', #{keyword}, ' %')
+                and match(title) against(#{keyword})
             </if>
             <if test="category != null">
                 and main_cat like concat(#{category}, '%')
             </if>
         </where>
         limit #{fromIndex}, #{count}
+    </select>
+
+    <select id="productsOfIds" resultType="Product" resultMap="ProductResultMap">
+        select asin, title, image_url_high_res, RAND() * 1000 as price, main_cat
+        from product
+        <where>
+            <if test="productIds.size() > 0">
+                and asin in
+                <foreach collection="productIds" item="asin" separator="," open="(" close=")">
+                    #{asin}
+                </foreach>
+            </if>
+            <if test="productIds.size() == 0">
+                and 1 = 0
+            </if>
+        </where>
     </select>
 </mapper>
