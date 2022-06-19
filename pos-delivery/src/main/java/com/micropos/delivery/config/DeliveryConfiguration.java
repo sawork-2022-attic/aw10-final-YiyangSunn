@@ -52,10 +52,11 @@ public class DeliveryConfiguration {
                             return;
                         }
                         Delivery delivery = optional.get();
-                        if (delivery.getPhases().size() < 7) {
+                        int phaseCount = delivery.getPhases().size();
+                        if (phaseCount < 7) {
                             String phaseId = UUID.randomUUID().toString();
                             Long timeStamp = System.currentTimeMillis();
-                            String message = "这是一条新的物流信息";
+                            String message = phaseCount < 6 ? "这是一条新的物流信息" : "这是最后一条物流信息";
                             DeliveryPhase phase = new DeliveryPhase(phaseId, timeStamp, message);
                             deliveryRepository.addDeliveryPhase(deliveryId, phase).subscribe(addOk -> {
                                 if (!addOk) {

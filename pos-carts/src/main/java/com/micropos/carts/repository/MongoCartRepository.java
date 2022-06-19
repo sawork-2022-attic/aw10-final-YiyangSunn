@@ -15,7 +15,7 @@ import reactor.core.publisher.Mono;
 import java.util.*;
 
 @Repository
-public class SimpleCartRepository implements CartRepository {
+public class MongoCartRepository implements CartRepository {
 
     private static final String COLLECTION = "cart";
 

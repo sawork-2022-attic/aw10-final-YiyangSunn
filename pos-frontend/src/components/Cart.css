@@ -45,11 +45,8 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-}
-
-.cart .item-image {
     height: 80px;
-    max-width: 80px;
+    width: 80px;
 }
 
 .cart .item-description {

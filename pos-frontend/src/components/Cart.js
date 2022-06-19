@@ -30,7 +30,11 @@ export default function Cart() {
           <div className="item-info">
             <div className="item-image-description">
               <div className="item-image-container">
-                <img className="item-image" alt={item.image} src={item.image}/>
+                <img
+                  alt={item.image}
+                  src={item.image}
+                  style={{height: "100%", width: "100%"}}
+                />
               </div>
               <div className="item-description">
                 {item.name}

@@ -5,9 +5,10 @@ spring:
   application:
     name: pos-products
   cache:
-    type: ehcache
-    ehcache:
-      config: classpath:ehcache/conf.xml
+    type: redis
+  redis:
+    host: localhost
+    port: 6379
   datasource:
     url: jdbc:mysql://localhost:23306/aw06_db
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -45,4 +46,3 @@ mybatis:
   type-handlers-package: com.micropos.products.model
   configuration:
     jdbc-type-for-null: null
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
