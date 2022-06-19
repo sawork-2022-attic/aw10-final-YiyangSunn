@@ -5,13 +5,13 @@ spring:
   application:
     name: pos-delivery
   rabbitmq:
-    host: 127.0.0.1
+    host: 124.222.168.27
     port: 5672
     username: root
     password: Saw0rk_2o22
   data:
     mongodb:
-      host: localhost
+      host: 124.222.168.27
       port: 27017
       username: root
       password: Saw0rk_2o22

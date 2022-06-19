@@ -7,13 +7,15 @@ spring:
   cache:
     type: redis
   redis:
-    host: localhost
-    port: 6379
+    password: Saw0rk_2o22
+    cluster:
+      nodes: 124.222.168.27:6379,124.222.168.27:6380,124.222.168.27:6381,124.222.168.27:6382,124.222.168.27:6383,124.222.168.27:6384
+      max-redirects: 6
   datasource:
-    url: jdbc:mysql://localhost:23306/aw06_db
+    url: jdbc:mysql://124.222.168.27:3306/aw06_db
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    password: $2a$10$1P5vApro6CGetwiQYGSxF.719D2qz/nbFM8FQpP59dJi85Q/p5n6m
+    password: Saw0rk_2o22
 
 eureka:
   instance:

@@ -5,19 +5,21 @@ spring:
   application:
     name: pos-orders
   rabbitmq:
-    host: localhost
+    host: 124.222.168.27
     port: 5672
     username: root
     password: Saw0rk_2o22
   data:
     mongodb:
-      host: localhost
+      host: 124.222.168.27
       port: 27017
       username: root
       password: Saw0rk_2o22
   redis:
-    host: localhost
-    port: 6379
+    password: Saw0rk_2o22
+    cluster:
+      nodes: 124.222.168.27:6379,124.222.168.27:6380,124.222.168.27:6381,124.222.168.27:6382,124.222.168.27:6383,124.222.168.27:6384
+      max-redirects: 6
   session:
     store-type: redis
   cloud:
